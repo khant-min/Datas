@@ -278,15 +278,64 @@ nextImg.src;
 
 // in dry way
 class Coder {
+  // can also do this
+  secondLang!: string;
+
   constructor(
-    public name: string,
+    public readonly name: string,
     public music: string,
     private age: number,
-    protected lang: string
+    protected lang: string = "Typescript"
   ) {
     this.name = name;
     this.music = music;
     this.age = age;
     this.lang = lang;
   }
+  public getAge() {
+    return `Hello, I'm, ${this.name}`;
+  }
 }
+
+const Dave = new Coder("dave", "rock", 23);
+
+interface Musician {
+  name: string;
+  instrument: string;
+  play(action: string): string;
+}
+
+class Guitarists implements Musician {
+  name: string;
+  instrument: string;
+  constructor(name: string, instrument: string) {
+    this.name = name;
+    this.instrument = instrument;
+  }
+  play(action: string) {
+    return `${this.name} ${action} the ${this.instrument}`;
+  }
+}
+
+const Page = new Guitarists("jimmy", "guitar");
+console.log(Page.play("strums"));
+
+// Index signatures
+
+interface TransationObj {
+  Pizza: number;
+  Books: number;
+  Job: number;
+}
+
+const todayTransation: TransationObj = {
+  Pizza: -10,
+  Books: -5,
+  Job: 50,
+};
+
+const echo = <T>(arg: T): T => arg;
+
+// function greet(person: string, date: Date) {
+//   console.log(date.toLocaleDateString());
+// }

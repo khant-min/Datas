@@ -17,3 +17,7 @@ li {
 /* .stick {
   @apply w-8 h-2 bg-gray-200;
 } */
+
+.btn {
+  @apply flex justify-between items-center;
+}

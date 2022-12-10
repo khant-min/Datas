@@ -9,14 +9,16 @@ const App = () => {
 
   return (
     <div className="min-h-screen h-[2000px] min-w-full">
-      {openSideNav && <SideNav setOpenSideNav={setOpenSideNav} />}
-      <header className="border border-slate-600 ">
+      <header className="border border-slate-600">
+        {openSideNav && <SideNav setOpenSideNav={setOpenSideNav} />}
         <Nav setOpenSideNav={setOpenSideNav} />
       </header>
-      <Login />
-      {/* <ImgSec /> */}
+      {/* <Login /> */}
+      <ImgSec />
     </div>
   );
 };
 
 export default App;
+
+// https://www.cambounlock.com/?fbclid=IwAR1RHy8_fQn8rlu0HukBQ15GPJmxJsf_MwHViJI2nKmA7bSesorPmP650nk
